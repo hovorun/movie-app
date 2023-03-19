@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   css: [
     '~/assets/defaults.scss',
   ],
-  target: 'static',
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
   },
