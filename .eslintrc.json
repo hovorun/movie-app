@@ -1,0 +1,200 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "vue",
+    "unused-imports",
+    "import-newlines",
+    "import",
+    "sort-exports"
+  ],
+  "rules": {
+    // default
+    "array-bracket-spacing": [
+      "error",
+      "never"
+    ],
+    "semi": [2],
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "tabWidth": 2
+      }
+    ],
+    "multiline-ternary": [
+      "error",
+      "always"
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "error",
+          "warn"
+        ]
+      }
+    ],
+    "no-debugger": "error",
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "no-extra-boolean-cast": "error",
+    "no-undef": "off",
+    // causes an error with Nuxt autoimports
+    "no-unused-vars": "off",
+    // causes an error with TS enums
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    // typescript
+    "@typescript-eslint/ban-ts-comment": "warn",
+    // TODO: enable error
+    "@typescript-eslint/no-explicit-any": "warn",
+    // TODO: enable error
+
+    // vue
+    "vue/no-v-html": "off",
+    "vue/html-indent": 2,
+    "vue/multi-word-component-names": "off",
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        "singleline": {
+          "max": 1
+        },
+        "multiline": {
+          "max": 1
+        }
+      }
+    ],
+    // must be enabled after setting up the project
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "vue/no-mutating-props": "warn",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "vue/no-v-text-v-html-on-component": "warn",
+    // formatting and sorting of imports/exports
+    "import-newlines/enforce": [
+      "error",
+      {
+        "items": 1,
+        "max-len": 100
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "pathGroups": [
+          {
+            "pattern": "vue",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "vue*",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@vue/*",
+            "group": "builtin"
+          },
+          {
+            "pattern": "@vueuse/*",
+            "group": "builtin"
+          },
+          {
+            "pattern": "vue-router",
+            "group": "builtin"
+          },
+          {
+            "pattern": "quasar",
+            "group": "builtin"
+          },
+          {
+            "pattern": "@nayaone/*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@apollo/*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/*",
+            "group": "internal"
+          },
+          {
+            "pattern": "@/*/*",
+            "group": "internal"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ]
+      }
+    ],
+    "sort-exports/sort-exports": [
+      "error",
+      {
+        "sortDir": "asc"
+      }
+    ]
+  }
+}
